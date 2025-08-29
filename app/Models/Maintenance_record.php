@@ -19,7 +19,7 @@ class Maintenance_record extends Model
         'total_cost',
         'vehicle_id',
         'client_id',
-        'technician_id',
+        'technican_id',
     ];
     public function vehicle ()
     {
@@ -31,7 +31,7 @@ class Maintenance_record extends Model
         return $this->belongsTo(Client::class);
     }
 
-    public function technician ()
+    public function technican ()
     {
         return $this->belongsTo(Technican::class);
     }

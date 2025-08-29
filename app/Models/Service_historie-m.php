@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Service_history extends Model
+class Service_historie extends Model
 {
     use HasFactory;
     protected $perPage = 10;

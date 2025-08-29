@@ -15,8 +15,8 @@ class Service_detailController extends Controller
      */
     public function index()
     {
-        $services_details = Service_detail::with('technician','maintenance_record')->paginate(10);
-        return view('services_details.index', compact('services_details'));
+        $service_details = Service_detail::with('technican','maintenance_record')->paginate(10);
+        return view('services_details.index', compact('service_details'));
     }
 
     /**
@@ -24,10 +24,10 @@ class Service_detailController extends Controller
      */
     public function create()
     {
-        $services_details = new Service_detail();
-        $technicians = Technician::all();
+        $service_details = new Service_detail();
+        $technicans = Technican::all();
         $maintenance_records = Maintenance_record::all();
-        return view('service_details.create', compact('services_details', 'technicians', 'maintenance_records'));
+        return view('services_details.create', compact('service_details', 'technicans', 'maintenance_records'));
     }
 
     /**
@@ -36,17 +36,18 @@ class Service_detailController extends Controller
     public function store(Service_detailRequest $request)
     {
         Service_detail::create($request->validated());
-
-        return redirect()->route('services_details.index')->with('success', 'Detalles de servicios creado con éxito.');
+        return redirect()->route('service_details.index')->with('success', 'Detalles de servicios creado con éxito.');
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(int $id)
+    public function show(string $id)
     {
-        $services_details = Service_detail::find($id);
-        return view('services_details.show', compact('services_de tails'));
+        $service_details = Service_detail::find($id);
+        $technicans = Technican::all();
+        $maintenance_records = Maintenance_record::all();
+        return view('services_details.show', compact('service_details', 'technicans', 'maintenance_records'));
     }
 
     /**
@@ -54,10 +55,10 @@ class Service_detailController extends Controller
      */
     public function edit(int $id)
     {
-        $services_details = Service_detail::find($id);
-        $technicians = Technician::all();
+        $service_details = Service_detail::find($id);
+        $technicans = Technican::all();
         $maintenance_records = Maintenance_record::all();
-        return view('services_details.edit', compact('services_details', 'technicians', 'maintenance_records'));
+        return view('services_details.edit', compact('service_details', 'technicans', 'maintenance_records'));
     }
 
     /**
@@ -65,9 +66,9 @@ class Service_detailController extends Controller
      */
     public function update(Service_detailRequest $request, int $id)
     {
-        $services_details = Service_detail::find($id);
-        $services_details->update($request->validated());
-        return redirect()->route('services_details.index')->with('updated', 'Detalles de servicio actualizado con éxito.');
+        $service_details = Service_detail::find($id);
+        $service_details->update($request->validated());
+        return redirect()->route('service_details.index')->with('updated', 'Detalles de servicio actualizado con éxito.');
     }
 
     /**
@@ -75,8 +76,8 @@ class Service_detailController extends Controller
      */
     public function destroy(int $id)
     {
-        $services_details = Service_detail::find($id);
-        $services_details->delete();
-        return redirect()->route('services_details.index')->with('deleted', 'Detalles de servicio eliminada con éxito.');
+        $service_details = Service_detail::find($id);
+        $service_details->delete();
+        return redirect()->route('service_details.index')->with('deleted', 'Detalles de servicio eliminada con éxito.');
     }
 }

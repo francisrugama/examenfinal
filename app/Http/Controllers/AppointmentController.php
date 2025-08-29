@@ -9,7 +9,7 @@ use App\Models\Technican;
 use App\Models\Client;
 use App\Models\Vehicle;
 
-class AppointmentsController extends Controller
+class AppointmentController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -45,10 +45,13 @@ class AppointmentsController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(int $id)
+    public function show(string $id)
     {
         $appointments = Appointment::find($id);
-        return view('appointments.show', compact('appointments'));
+        $technicans = Technican::all();
+        $clients = Client::all();
+        $vehicles = Vehicle::all();
+        return view('appointments.show', compact('appointments', 'technicans', 'clients', 'vehicles'));
     }
 
     /**

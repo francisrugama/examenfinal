@@ -13,7 +13,7 @@
                             <i class="fas fa-plus-circle"></i> Registrar Historial de mantenimiento</h3>
                         </div>
                         <div class="col-4 text-right">
-                            <a href="{{ route('maintenances_record.index') }}" class="btn btn-sm btn-primary">
+                            <a href="{{ route('maintenance_records.index') }}" class="btn btn-sm btn-primary">
                                 <i class="fas fa-arrow-left"></i> Volver
                             </a>
                         </div>
@@ -22,10 +22,10 @@
 
                 <div class="card-body container-fluid">
 
-                    <form action="{{ route('maintenances_record.update', $maintenance_record->id) }}" method="POST">
+                    <form action="{{ route('maintenance_records.update', $maintenance_records->id) }}" method="POST">
                         @csrf
                         @method('PUT')
-                        @include('maintenances_record.form')
+                        @include('maintenance_records.form')
                     </form>
                 </div>
             </div>

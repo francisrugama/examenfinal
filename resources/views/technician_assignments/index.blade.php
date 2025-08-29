@@ -9,7 +9,7 @@
                 <div class="card-header border-0">
                     <div class="d-flex justify-content-between align-items-center">
                         <h3 class="mb-0">Técnico asignado</h3>
-                        <a href="{{ route('technicans_assignments.create') }}" class="btn btn-primary">
+                        <a href="{{ route('technican_assignments.create') }}" class="btn btn-primary">
                             <i class="fas fa-plus"></i> Nueva Técnico asignado
                         </a>
                     </div>
@@ -30,7 +30,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($technicans_assignments as $technican_assignment)
+                            @foreach ($technican_assignments as $technican_assignment)
                                 <tr>
                                     <td>{{ $technican_assignment->assignment_date}}</td>
                                     <td>{{ $technican_assignment->task_status}}</td>
@@ -42,14 +42,14 @@
                                     <td>{{ $technican_assignment->created_at}}</td>
 
                                     <td style="white-space: nowrap; display: flex; align-items: center;">
-                                        <a href="{{ route('technicans_assignments.show', $technican_assignment->id) }}" class="btn btn-primary btn-sm" style="margin-right: 7px">
+                                        <a href="{{ route('technican_assignments.show', $technican_assignment->id) }}" class="btn btn-primary btn-sm" style="margin-right: 7px">
                                             <i class="fas fa-eye"></i> Mostrar
                                         </a>
 
-                                        <a href="{{ route('technicans_assignments.edit', $technican_assignment->id) }}" class="btn btn-info btn-sm" style="margin-right: 7px">
+                                        <a href="{{ route('technican_assignments.edit', $technican_assignment->id) }}" class="btn btn-info btn-sm" style="margin-right: 7px">
                                             <i class="fas fa-edit"></i> Editar
                                         </a>
-                                        <form action="{{ route('technicans_assignments.destroy', $technican_assignment->id) }}" method="POST"
+                                        <form action="{{ route('technican_assignments.destroy', $technican_assignment->id) }}" method="POST"
                                             style="display: inline-block; margin: 0; display: flex; align-items: center;"
                                             onsubmit="return confirm('¿Está seguro que desea eliminar esta técnico asignado? Esta acción no se puede deshacer.');">
                                             @csrf
@@ -67,11 +67,10 @@
 
                 <div class="card-footer py-4">
                     <nav aria-label="..." class="d-flex flex-wrap justify-content-center justify-content-lg-start">
-                        {{ $technicans_assignments->links() }}
+                        {{ $technican_assignments->links() }}
                     </nav>
                 </div>
             </div>
         </div>
     </div>
 @endsection
-

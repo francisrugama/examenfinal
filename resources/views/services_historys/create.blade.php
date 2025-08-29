@@ -1,3 +1,4 @@
+@extends('layouts.panel')
 @section('title', 'Historial de servicio/Crear')
 
 @section('content')

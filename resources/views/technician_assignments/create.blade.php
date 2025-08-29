@@ -1,3 +1,4 @@
+@extends('layouts.panel')
 @section('title', 'Técnico asignado/Crear')
 
 @section('content')
@@ -11,7 +12,7 @@
                             <i class="fas fa-plus-circle"></i> Registrar Técnico asignado</h3>
                         </div>
                         <div class="col-4 text-right">
-                            <a href="{{ route('Technicans_assignments.index') }}" class="btn btn-sm btn-primary">
+                            <a href="{{ route('Technican_assignments.index') }}" class="btn btn-sm btn-primary">
                                 <i class="fas fa-arrow-left"></i> Volver
                             </a>
                         </div>
@@ -20,10 +21,10 @@
 
                 <div class="card-body container-fluid">
 
-                    <form action="{{ route('Technicans_assignments.store') }}" method="POST">
+                    <form action="{{ route('Technican_assignments.store') }}" method="POST">
                         @csrf
 
-                        @include('Technicans_assignments.form')
+                        @include('Technican_assignments.form')
                     </form>
                 </div>
             </div>

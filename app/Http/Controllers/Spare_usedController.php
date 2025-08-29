@@ -14,8 +14,8 @@ class Spare_usedController extends Controller
      */
     public function index()
     {
-        $spares_useds = Spare_used::with('maintenances_record')->paginate(10);
-        return view('spares_useds.index', compact('spares_useds'));
+        $spare_useds = Spare_used::with('maintenances_record')->paginate(10);
+        return view('spare_useds.index', compact('spare_useds'));
     }
 
     /**
@@ -23,9 +23,9 @@ class Spare_usedController extends Controller
      */
     public function create()
     {
-        $spares_useds = new Spare_used();
+        $spare_useds = new Spare_used();
         $maintenances_record = Maintenance_record::all();
-        return view('spares_useds.create', compact('spares_useds', 'maintenances_record'));
+        return view('spare_useds.create', compact('spare_useds', 'maintenances_record'));
     }
 
     /**
@@ -35,7 +35,7 @@ class Spare_usedController extends Controller
     {
         Spare_used::create($request->validated());
 
-        return redirect()->route('spares_useds.index')->with('success', 'Repuestos usados creado con éxito.');
+        return redirect()->route('spare_useds.index')->with('success', 'Repuestos usados creado con éxito.');
     }
 
     /**
@@ -43,8 +43,8 @@ class Spare_usedController extends Controller
      */
     public function show(int $id)
     {
-        $spares_useds = Spare_used::find($id);
-        return view('spares_useds.show', compact('spares_useds'));
+        $spare_useds = Spare_used::find($id);
+        return view('spare_useds.show', compact('spare_useds'));
     }
 
     /**
@@ -52,9 +52,9 @@ class Spare_usedController extends Controller
      */
     public function edit(int $id)
     {
-        $spares_useds = Spare_used::find($id);
+        $spare_useds = Spare_used::find($id);
         $maintenances_record = Maintenance_record::all();
-        return view('spares_useds.edit', compact('spares_useds', 'maintenances_record'));
+        return view('spare_useds.edit', compact('spare_useds', 'maintenances_record'));
     }
 
     /**
@@ -62,9 +62,9 @@ class Spare_usedController extends Controller
      */
     public function update(Spare_usedRequest $request, int $id)
     {
-        $spares_useds = Spare_used::find($id);
-        $spares_useds->update($request->validated());
-        return redirect()->route('spares_useds.index')->with('updated', 'Repuestos usados actualizado con éxito.');
+        $spare_useds = Spare_used::find($id);
+        $spare_useds->update($request->validated());
+        return redirect()->route('spare_useds.index')->with('updated', 'Repuestos usados actualizado con éxito.');
     }
 
     /**
@@ -72,8 +72,8 @@ class Spare_usedController extends Controller
      */
     public function destroy(int $id)
     {
-        $spares_useds = Spare_used::find($id);
-        $spares_useds->delete();
-        return redirect()->route('spares_useds.index')->with('deleted', 'Repuestos usados eliminada con éxito.');
+        $spare_useds = Spare_used::find($id);
+        $spare_useds->delete();
+        return redirect()->route('spare_useds.index')->with('deleted', 'Repuestos usados eliminada con éxito.');
     }
 }

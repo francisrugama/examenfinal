@@ -26,9 +26,9 @@ class Technican extends Model
         return $this->hasMany(Appointment::class);
     }
 
-    public function maintenances_record ()
+    public function maintenances_records ()
     {
-        return $this->hasOne(Maintenances_record::class);
+        return $this->hasMany(Maintenance_record::class);
     }
 
     public function service_detail ()

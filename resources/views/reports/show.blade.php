@@ -1,7 +1,8 @@
-@extends ('layouts.panel')
-@section("title", 'Reporte/Show')
+@extends('layouts.panel')
 
-@section("content")
+@section('title', 'Reporte/Crear')
+
+@section('content')
     <div class="col-xl-12 order-x-1">
         <div class="card bg-secondary shadow">
 
@@ -28,7 +29,7 @@
                                 <label class="form-control-label" for="filter_type">
                                     <i class="fa fa-user"></i> Tipo de filtro
                                 </label>
-                                <p>{{ $report->filter_type }}</p>
+                                <p>{{ $reports->filter_type }}</p>
                             </div>
                         </div>
                     </div>
@@ -39,7 +40,7 @@
                                 <label class="form-control-label" for="generated_date">
                                     <i class="fa fa-user"></i> Fecha de generación
                                 </label>
-                                <p>{{ $report->generated_date }}</p>
+                                <p>{{ $reports->generated_date }}</p>
                             </div>
                         </div>
                     </div>
@@ -50,7 +51,7 @@
                                 <label class="form-control-label" for="content_summary">
                                     <i class="fa fa-user"></i> Resumen del contenido
                                 </label>
-                                <p>{{ $report->content_summary }}</p>
+                                <p>{{ $reports->content_summary }}</p>
                             </div>
                         </div>
                     </div>
@@ -61,7 +62,7 @@
                                 <label class="form-control-label" for="generated_by">
                                     <i class="fa fa-user"></i> Generado por
                                 </label>
-                                <p>{{ $report->generated_by }}</p>
+                                <p>{{ $reports->generated_by }}</p>
                             </div>
                         </div>
                     </div>
@@ -72,7 +73,7 @@
                                 <label class="form-control-label" for="start_date">
                                     <i class="fa fa-user"></i> Fecha de inicio
                                 </label>
-                                <p>{{ $report->start_date }}</p>
+                                <p>{{ $reports->start_date }}</p>
                             </div>
                         </div>
                     </div>
@@ -83,7 +84,7 @@
                                 <label class="form-control-label" for="end_date">
                                     <i class="fa fa-user"></i> Fecha de finalización
                                 </label>
-                                <p>{{ $report->end_date }}</p>
+                                <p>{{ $reports->end_date }}</p>
                             </div>
                         </div>
                     </div>
@@ -92,9 +93,9 @@
                         <div class="col-lg-12">
                             <div class="form-group">
                                 <label class="form-control-label" for="output_format">
-                                    <i class="fa fa-user"></i> Formato de salida
+                                    <i class="fa fa-user"></i> Fecha de salida
                                 </label>
-                                <p>{{ $report->output_format }}</p>
+                                <p>{{ $reports->output_format }}</p>
                             </div>
                         </div>
                     </div>
@@ -105,7 +106,7 @@
                                 <label class="form-control-label" for="report_title">
                                     <i class="fa fa-user"></i> Titulo del reporte
                                 </label>
-                                <p>{{ $report->report_title }}</p>
+                                <p>{{ $reports->report_title }}</p>
                             </div>
                         </div>
                     </div>
@@ -116,7 +117,7 @@
                                 <label class="form-control-label" for="archived">
                                     <i class="fa fa-user"></i> Archivo
                                 </label>
-                                <p>{{ $report->archived }}</p>
+                                <p>{{ $reports->archived }}</p>
                             </div>
                         </div>
                     </div>
@@ -127,7 +128,7 @@
                                 <label class="form-control-label" for="total_records">
                                     <i class="fa fa-user"></i> Total de historiales
                                 </label>
-                                <p>{{ $report->total_records }}</p>
+                                <p>{{ $reports->total_records }}</p>
                             </div>
                         </div>
                     </div>
@@ -138,7 +139,7 @@
                                 <label class="form-control-label" for="register_date">
                                     <i class="fas fa-calendar-check"></i> Fecha de Registro
                                 </label>
-                                <p>{{ $report->created_at }}</p>
+                                <p>{{ $reports->created_at }}</p>
                             </div>
                         </div>
                     </div>

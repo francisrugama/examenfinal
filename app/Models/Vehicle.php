@@ -18,7 +18,7 @@ class Vehicle extends Model
         'brand',
         'license_plate',
     ];
-    public function vehicle_history ()
+    public function vehicle_histories ()
     {
         return $this->hasMany(Vehicle_history::class);
     }
@@ -35,6 +35,6 @@ class Vehicle extends Model
 
     public function maintenances_record ()
     {
-        return $this->hasOne(Maintenances_record::class);
+        return $this->hasMany(Maintenance_record::class);
     }
 }

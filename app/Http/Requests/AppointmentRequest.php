@@ -23,9 +23,9 @@ class AppointmentRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'code_appointments'=> ['required','string','min:8', 'max:20', Rule::unique('appointments')->ignore($this->appointment)],
+            'code_appointments'=> ['required','string','min:8', 'max:20', Rule::unique('appointments')->ignore($this->code_appointments)],
             'creation_date'=> 'required',
-            'notes'=> 'required|text',
+            'notes'=> 'required',
             'confirmed'=> 'required|string|min:8|max:45',
             'technican_id'=> 'required',
             'client_id'=> 'required',

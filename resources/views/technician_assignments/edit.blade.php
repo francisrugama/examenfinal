@@ -1,4 +1,6 @@
-section('title', 'Historial de mantenimiento/Crear')
+@extends('layouts.panel')
+
+@section('title', 'Técnico asignado/Crear')
 
 @section('content')
 
@@ -8,10 +10,10 @@ section('title', 'Historial de mantenimiento/Crear')
                 <div class="row align-items-center">
                     <div class="col-8">
                         <h3 class="mb-0">
-                            <i class="fas fa-plus-circle"></i> Registrar Historial de mantenimiento</h3>
+                            <i class="fas fa-plus-circle"></i> Registrar Técnico asignado</h3>
                         </div>
                         <div class="col-4 text-right">
-                            <a href="{{ route('maintenances_record.index') }}" class="btn btn-sm btn-primary">
+                            <a href="{{ route('technican_assignments.index') }}" class="btn btn-sm btn-primary">
                                 <i class="fas fa-arrow-left"></i> Volver
                             </a>
                         </div>
@@ -20,13 +22,14 @@ section('title', 'Historial de mantenimiento/Crear')
 
                 <div class="card-body container-fluid">
 
-                    <form action="{{ route('maintenances_record.store') }}" method="POST">
+                    <form action="{{ route('technican_assignments.update', $technician_assignment->id) }}" method="POST">
                         @csrf
-
-                        @include('maintenances_record.form')
+                        @method('PUT')
+                        @include('technican_assignments.form')
                     </form>
                 </div>
             </div>
         </div>
     </div>
- @endsection
+
+@endsection

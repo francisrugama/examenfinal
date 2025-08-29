@@ -11,7 +11,7 @@
                         <h3 class="nb-0"> <i class="fas fa-newspaper"></i> Ver Cita</h3>
                     </div>
                     <div class="col-4 text-right">
-                        <a href="{{ ('appointments.index' ) }}" class="btn btn-sm btn-primary">
+                        <a href="{{ route('appointments.index' ) }}" class="btn btn-sm btn-primary">
                             <i class="fa fa-list"></i> Volver
                         </a>
                     </div>
@@ -28,7 +28,7 @@
                                 <label class="form-control-label" for="code_appointments">
                                     <i class="fa fa-user"></i> Código de cita
                                 </label>
-                                <p>{{ $appointment->code_appointments }}</p>
+                                <p>{{ $appointments->code_appointments }}</p>
                             </div>
                         </div>
                     </div>
@@ -39,7 +39,7 @@
                                 <label class="form-control-label for="for="creation_date">
                                     <i class="fas fa-envelope"></i> Fecha de creación
                                 </label>
-                                <p>{{ $appointment->creation_date }}</p>
+                                <p>{{ $appointments->creation_date }}</p>
                             </div>
                         </div>
                     </div>
@@ -50,7 +50,7 @@
                                 <label class="form-control-label" for="notes">
                                     <i class="fa fa-user"></i> Notas
                                 </label>
-                                <p>{{ $appointment->notes }}</p>
+                                <p>{{ $appointments->notes }}</p>
                             </div>
                         </div>
                     </div>
@@ -61,7 +61,7 @@
                                 <label class="form-control-label" for="confirmed">
                                     <i class="fa fa-user"></i> Confirmación
                                 </label>
-                                <p>{{ $appointment->confirmed }}</p>
+                                <p>{{ $appointments->confirmed }}</p>
                             </div>
                         </div>
                     </div>
@@ -72,7 +72,7 @@
                                 <label class="form-control-label" for="technican">
                                     <i class="fa fa-graduate-cap"></i> Técnico
                                 </label>
-                                <p>{{ $appointment->technican->name }}</p>
+                                <p>{{ $appointments->technican->name }}</p>
                             </div>
                         </div>
                     </div>
@@ -83,7 +83,7 @@
                                 <label class="form-control-label" for="client">
                                     <i class="fa fa-graduate-cap"></i> Cliente
                                 </label>
-                                <p>{{ $appointment->client->name }}</p>
+                                <p>{{ $appointments->client->name }}</p>
                             </div>
                         </div>
                     </div>
@@ -94,7 +94,7 @@
                                 <label class="form-control-label" for="vehicle">
                                     <i class="fa fa-user-graduate"></i> Veiculo
                                 </label>
-                                <p>{{ $appointment->vehicle->name }}</p>
+                                <p>{{ $appointments->vehicle->name }}</p>
                             </div>
                         </div>
                     </div>
@@ -105,7 +105,7 @@
                                 <label class="form-control-label" for="register_date">
                                     <i class="fas fa-calendar-check"></i> Fecha de Matricula
                                 </label>
-                                <p>{{ $appointment->created_at->format('d-m-Y') }}</p>
+                                <p>{{ $appointments->created_at->format('d-m-Y') }}</p>
                             </div>
                         </div>
                     </div>

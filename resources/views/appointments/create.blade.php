@@ -1,4 +1,6 @@
-@section('title', 'Cita/Crear')
+@extends('layouts.panel')
+
+@section('title', 'Reporte/Crear')
 
 @section('content')
 

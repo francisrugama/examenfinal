@@ -23,7 +23,7 @@ class Maintenance_recordRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'entry_date'=> 'required',
+            'entry_date'=> 'required|date',
             'delivery_date'=> 'required',
             'current_mileage'=> 'required|string|min:3|max:55',
             'work_description'=> 'required|string|max:255',
@@ -39,6 +39,7 @@ class Maintenance_recordRequest extends FormRequest
     {
         return [
             'entry_date.required'=> 'Fecha del contrato del mantenimiento es requerido.',
+            'entry_date.date'=> 'Fecha del contrato del mantenimiento es tiene que ser una fecha vailda.',
 
             'delivery_date.required'=> 'Fecha del de entrega del mantenimiento es requerido.',
 

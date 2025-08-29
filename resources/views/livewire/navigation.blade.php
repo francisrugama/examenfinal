@@ -111,9 +111,9 @@
             </a>
         </li>
 
-        <li class="nav-item {{ Request::route()->named('maintenances_record.index') ? 'active' : '' }}">
-            <a class="nav-link {{ Request::route()->named('maintenances_record.index') ? 'active' : '' }}"
-                href="{{ route('maintenances_record.index') }}" wire:navigate>
+        <li class="nav-item {{ Request::route()->named('maintenance_records.index') ? 'active' : '' }}">
+            <a class="nav-link {{ Request::route()->named('maintenance_records.index') ? 'active' : '' }}"
+                href="{{ route('maintenance_records.index') }}" wire:navigate>
                 <i class="fas fa-tags text-yellow"></i> Maintenance_record
             </a>
         </li>
@@ -125,31 +125,31 @@
             </a>
         </li>
 
-        <li class="nav-item {{ Request::route()->named('services_details.index') ? 'active' : '' }}">
-            <a class="nav-link {{ Request::route()->named('services_details.index') ? 'active' : '' }}"
-                href="{{ route('services_details.index') }}" wire:navigate>
+        <li class="nav-item {{ Request::route()->named('service_details.index') ? 'active' : '' }}">
+            <a class="nav-link {{ Request::route()->named('service_details.index') ? 'active' : '' }}"
+                href="{{ route('service_details.index') }}" wire:navigate>
                 <i class="fas fa-tags text-yellow"></i> Service_detail
             </a>
         </li>
 
-        <li class="nav-item {{ Request::route()->named('services_historys.index') ? 'active' : '' }}">
-            <a class="nav-link {{ Request::route()->named('services_historys.index') ? 'active' : '' }}"
-                href="{{ route('services_historys.index') }}" wire:navigate>
+        <li class="nav-item {{ Request::route()->named('service_histories.index') ? 'active' : '' }}">
+            <a class="nav-link {{ Request::route()->named('service_histories.index') ? 'active' : '' }}"
+                href="{{ route('service_histories.index') }}" wire:navigate>
                 <i class="fas fa-tags text-yellow"></i> Service_history
             </a>
         </li>
 
-        <li class="nav-item {{ Request::route()->named('spares_useds.index') ? 'active' : '' }}">
-            <a class="nav-link {{ Request::route()->named('spares_useds.index') ? 'active' : '' }}"
-                href="{{ route('spares_useds.index') }}" wire:navigate>
+        <li class="nav-item {{ Request::route()->named('spare_useds.index') ? 'active' : '' }}">
+            <a class="nav-link {{ Request::route()->named('spare_useds.index') ? 'active' : '' }}"
+                href="{{ route('spare_useds.index') }}" wire:navigate>
                 <i class="fas fa-tags text-yellow"></i> Spare_used
             </a>
         </li>
 
-        <li class="nav-item {{ Request::route()->named('technicians_assignments.index') ? 'active' : '' }}">
-            <a class="nav-link {{ Request::route()->named('technicians_assignments.index') ? 'active' : '' }}"
-                href="{{ route('technicians_assignments.index') }}" wire:navigate>
-                <i class="fas fa-tags text-yellow"></i> Technician_assignment
+        <li class="nav-item {{ Request::route()->named('technican_assignments.index') ? 'active' : '' }}">
+            <a class="nav-link {{ Request::route()->named('technican_assignments.index') ? 'active' : '' }}"
+                href="{{ route('technican_assignments.index') }}" wire:navigate>
+                <i class="fas fa-tags text-yellow"></i> Technican_assignment
             </a>
         </li>
 

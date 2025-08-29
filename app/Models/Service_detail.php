@@ -14,11 +14,11 @@ class Service_detail extends Model
         'tool_used',
         'warranty_service',
         'observations',
-        'technician_id',
+        'technican_id',
         'maintenance_record_id',
     ];
 
-    public function technician ()
+    public function technican ()
     {
         return $this->belongsTo(Technican::class);
     }

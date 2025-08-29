@@ -31,7 +31,7 @@ class ReportController extends Controller
      */
     public function store(ReportRequest $request)
     {
-        Report::create($reports->validated());
+        Report::create($request->validated());
 
         return redirect()->route('reports.index')->with('success', 'Reporte creado con éxito.');
     }
@@ -57,7 +57,7 @@ class ReportController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(ClientRequest $request, int $id)
+    public function update(ReportRequest $request, int $id)
     {
         $reports = Report::find($id);
         $reports->update($request->validated());

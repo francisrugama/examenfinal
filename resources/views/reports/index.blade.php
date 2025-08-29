@@ -1,4 +1,9 @@
+@extends('layouts.panel')
+
+@section('title', 'Reporte/Crear')
+
 @section('content')
+
     <div class="row">
         <div class="col">
             <div class="card shadow">
@@ -22,7 +27,7 @@
                                 <th scope="col">Generado por</th>
                                 <th scope="col">Fecha de comienzo</th>
                                 <th scope="col">Fecha de finalización</th>
-                                <th scope="col">Formato de salida</th>
+                                <th scope="col">Fecha de salida</th>
                                 <th scope="col">Titulo del reporte</th>
                                 <th scope="col">Archivo</th>
                                 <th scope="col">Total de historiales</th>

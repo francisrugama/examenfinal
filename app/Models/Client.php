@@ -23,7 +23,7 @@ class Client extends Model
     ];
     public function maintenances_record ()
     {
-        return $this->hasMany(Maintenances_record::class);
+        return $this->hasMany(Maintenance_record::class);
     }
 
     public function vehicle_history ()

@@ -32,15 +32,15 @@
                         <tbody>
                             @foreach ($appointments as $appointment)
                                 <tr>
-                                    <td>{{ $appointments->code_appointments}}</td>
-                                    <td>{{ $appointments->creation_date}}</td>
-                                    <td>{{ $appointments->notes}}</td>
-                                    <td>{{ $appointments->work_description}}</td>
-                                    <td>{{ $appointments->confirmed}}</td>
-                                    <td>{{ $appointments->technican->name}}</td>
-                                    <td>{{ $appointments->client->name}}</td>
-                                    <td>{{ $appointments->vehicle->name}}</td>
-                                    <td>{{ $appointments->created_at}}</td>
+                                    <td>{{ $appointment->code_appointments}}</td>
+                                    <td>{{ $appointment->creation_date}}</td>
+                                    <td>{{ $appointment->notes}}</td>
+                                    <td>{{ $appointment->work_description}}</td>
+                                    <td>{{ $appointment->confirmed}}</td>
+                                    <td>{{ $appointment->technican->name}}</td>
+                                    <td>{{ $appointment->client->name}}</td>
+                                    <td>{{ $appointment->vehicle->name}}</td>
+                                    <td>{{ $appointment->created_at}}</td>
 
                                     <td style="white-space: nowrap; display: flex; align-items: center;">
                                         <a href="{{ route('appointments.show', $appointment->id) }}" class="btn btn-primary btn-sm" style="margin-right: 7px">
@@ -75,3 +75,4 @@
         </div>
     </div>
 @endsection
+

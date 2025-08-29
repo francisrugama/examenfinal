@@ -3,7 +3,7 @@
         <div class="col-lg-6">
             <div class="form-group">
                 <label class="form-control-label" for="filter_type">Tipo de filtro</label>
-                <input type="text" id="filter_type" filter_type="filter_type" class="form-control form-control-alternative"
+                <input type="text" id="filter_type" name="filter_type" class="form-control form-control-alternative"
                     placeholder="Ingresar tipo de filtro"
                     value="{{ old('filter_type', $reports->filter_type) }}">
             </div>
@@ -14,8 +14,8 @@
         <div class="col-lg-6">
             <div class="form-group">
                 <label class="form-control-label" for="generated_date">Fecha generada</label>
-                <input type="date" id="generated_date" name="phone" class="form-control form-control-alternative"
-                    placeholder="Ingresar la fecha de generada del reporte"
+                <input type="date" id="generated_date" name="generated_date" class="form-control form-control-alternative"
+                    placeholder="Ingresar la fecha generada del reporte"
                     value="{{ old('generated_date', $reports->generated_date) }}">
             </div>
         </div>
@@ -36,8 +36,8 @@
         <div class="col-lg-6">
             <div class="form-group">
                 <label class="form-control-label" for="generated_by">Generado por</label>
-                <input type="date" id="generated_by" name="generated_by" class="form-control form-control-alternative"
-                    placeholder="Ingresar le persona que genero el reporte"
+                <input type="text" id="generated_by" name="generated_by" class="form-control form-control-alternative"
+                    placeholder="Ingresar la persona que generó el reporte"
                     value="{{ old('generated_by', $reports->generated_by) }}">
             </div>
         </div>
@@ -59,7 +59,7 @@
             <div class="form-group">
                 <label class="form-control-label" for="end_date">Fecha de finalización</label>
                 <input type="date" id="end_date" name="end_date" class="form-control form-control-alternative"
-                    placeholder="Ingresar la de finalización"
+                    placeholder="Ingresar la fecha de finalización"
                     value="{{ old('end_date', $reports->end_date) }}">
             </div>
         </div>
@@ -68,9 +68,9 @@
     <div class="row">
         <div class="col-lg-6">
             <div class="form-group">
-                <label class="form-control-label" for="output_format">Formato de salida</label>
+                <label class="form-control-label" for="output_format">Fecha de salida</label>
                 <input type="date" id="output_format" name="output_format" class="form-control form-control-alternative"
-                    placeholder="Ingresar el el formato de salida del reporte"
+                    placeholder="Ingresar el formato de salida del reporte"
                     value="{{ old('output_format', $reports->output_format) }}">
             </div>
         </div>
@@ -79,9 +79,9 @@
     <div class="row">
         <div class="col-lg-6">
             <div class="form-group">
-                <label class="form-control-label" for="report_title">Titulo del reporte</label>
+                <label class="form-control-label" for="report_title">Título del reporte</label>
                 <input type="text" id="report_title" name="report_title" class="form-control form-control-alternative"
-                    placeholder="Ingresar el titulo del reporte"
+                    placeholder="Ingresar el título del reporte"
                     value="{{ old('report_title', $reports->report_title) }}">
             </div>
         </div>
@@ -108,7 +108,6 @@
             </div>
         </div>
     </div>
-
 </div>
 
 <hr class="my-4" />
@@ -122,4 +121,3 @@
         </button>
     </div>
 </div>
-

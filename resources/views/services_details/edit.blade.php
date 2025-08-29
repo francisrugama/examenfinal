@@ -13,7 +13,7 @@
                             <i class="fas fa-plus-circle"></i> Registrar Detalles del servicio</h3>
                         </div>
                         <div class="col-4 text-right">
-                            <a href="{{ route('services_details.index') }}" class="btn btn-sm btn-primary">
+                            <a href="{{ route('service_details.index') }}" class="btn btn-sm btn-primary">
                                 <i class="fas fa-arrow-left"></i> Volver
                             </a>
                         </div>
@@ -22,7 +22,7 @@
 
                 <div class="card-body container-fluid">
 
-                    <form action="{{ route('services_details.update', $service_detail->id) }}" method="POST">
+                    <form action="{{ route('service_details.update', $service_details->id) }}" method="POST">
                         @csrf
                         @method('PUT')
                         @include('services_details.form')

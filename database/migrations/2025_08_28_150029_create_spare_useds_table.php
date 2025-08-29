@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('spares_useds', function (Blueprint $table) {
+        Schema::create('spare_useds', function (Blueprint $table) {
             $table->increments('id');
             $table->string('part_code')->unique();
             $table->string('brand');
@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('supplier_name');
 
             $table->integer('maintenance_record_id')->unsigned();
-            $table->foreign('maintenance_record_id')->references('id')->on('maintenances_record')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreign('maintenance_record_id')->references('id')->on('maintenance_records')->onDelete('cascade')->onUpdate('cascade');
 
             $table->timestamps();
         });
@@ -30,6 +30,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('spares_useds');
+        Schema::dropIfExists('spare_useds');
     }
 };

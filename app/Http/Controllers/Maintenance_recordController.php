@@ -16,8 +16,8 @@ class Maintenance_recordController extends Controller
      */
     public function index()
     {
-        $maintenances_record = Maintenance_record::with('vehicle', 'client', 'technican')->paginate(10);
-        return view('maintenances_record.index', compact('maintenances_record'));
+        $maintenance_records = Maintenance_record::with('vehicle', 'client', 'technican')->paginate(10);
+        return view('maintenance_records.index', compact('maintenance_records'));
     }
 
     /**
@@ -25,11 +25,11 @@ class Maintenance_recordController extends Controller
      */
     public function create()
     {
-        $maintenances_record = new Maintenance_record();
+        $maintenance_records = new Maintenance_record();
         $vehicles = Vehicle::all();
         $clients = Client::all();
-        $technicians = Technician::all();
-        return view('maintenances_record.create', compact('maintenances_record', 'vehicles', 'clients', 'technicians'));
+        $technicans = Technican::all();
+        return view('maintenance_records.create', compact('maintenance_records', 'vehicles', 'clients', 'technicans'));
     }
 
     /**
@@ -38,17 +38,19 @@ class Maintenance_recordController extends Controller
     public function store(Maintenance_recordRequest $request)
     {
         Maintenance_record::create($request->validated());
-
-        return redirect()->route('maintenances_record.index')->with('success', 'Record de mantenimiento creado con éxito.');
+        return redirect()->route('maintenance_records.index')->with('success', 'Record de mantenimiento creado con éxito.');
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(int $id)
+    public function show(string $id)
     {
-        $maintenances_record = Maintenance_record::find($id);
-        return view('maintenances_record.show', compact('maintenances_record'));
+        $maintenance_records = Maintenance_record::find($id);
+        $vehicles = Vehicle::all();
+        $clients = Client::all();
+        $technicans = Technican::all();
+        return view('maintenance_records.show', compact('maintenance_records', 'vehicles', 'clients', 'technicans'));
     }
 
     /**
@@ -56,11 +58,11 @@ class Maintenance_recordController extends Controller
      */
     public function edit(int $id)
     {
-        $maintenances_record = Maintenance_record::find($id);
+        $maintenance_records = Maintenance_record::find($id);
         $vehicles = Vehicle::all();
         $clients = Client::all();
-        $technicians = Technician::all();
-        return view('maintenances_record.edit', compact('maintenances_record', 'vehicles', 'clients', 'technicians'));
+        $technicans = Technican::all();
+        return view('maintenance_records.edit', compact('maintenance_records', 'vehicles', 'clients', 'technicans'));
     }
 
     /**
@@ -68,9 +70,9 @@ class Maintenance_recordController extends Controller
      */
     public function update(Maintenance_recordRequest $request, int $id)
     {
-        $maintenances_record = Maintenance_record::find($id);
-        $maintenances_record->update($request->validated());
-        return redirect()->route('maintenances_record.index')->with('updated', 'Record de mantenimiento actualizado con éxito.');
+        $maintenance_records = Maintenance_record::find($id);
+        $maintenance_records->update($request->validated());
+        return redirect()->route('maintenance_records.index')->with('updated', 'Record de mantenimiento actualizado con éxito.');
     }
 
     /**
@@ -78,8 +80,8 @@ class Maintenance_recordController extends Controller
      */
     public function destroy(int $id)
     {
-        $maintenances_record = Maintenance_record::find($id);
-        $maintenances_record->delete();
-        return redirect()->route('maintenances_record.index')->with('deleted', 'Record de mantenimiento eliminada con éxito.');
+        $maintenance_records = Maintenance_record::find($id);
+        $maintenance_records->delete();
+        return redirect()->route('maintenance_records.index')->with('deleted', 'Record de mantenimiento eliminada con éxito.');
     }
 }
